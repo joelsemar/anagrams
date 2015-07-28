@@ -1,0 +1,29 @@
+
+import re
+import sys
+
+
+
+def is_anagram(source, candidate):
+    if not isinstance(candidate, str):
+        return False
+
+    if not isinstance(source, str):
+        return False
+
+    source = clean(source)
+    candidate = clean(candidate)
+    if len(source) != len(candidate):
+        return False
+
+    if source == candidate:
+        return False
+
+    if sorted(source) == sorted(candidate):
+        return True
+
+
+#strip any whitespace or punctuation, as well as lower case text
+def clean(text):
+   text = text.lower()
+   return re.sub("[^a-z]", "", text)
