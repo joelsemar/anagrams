@@ -3,6 +3,12 @@ small piece of code to locate unique anagrams of a given word in a text file
 you can run the example by ./run.sh
 (you may need chmod +x run.sh)
 
+Example output:
+jsemar@HA002425 ~/anagrams (master) ▸ ./run.sh
+Finding anagrams for the word 'empires' in file 'words'
+found 5 words in 2.57160806656 seconds
+spireme, emprise, epimers, imprese, premise
+
 
 It's the job of any decent developer to ask questions before jumping in to code. There are a number
 that are unanswered for this.
