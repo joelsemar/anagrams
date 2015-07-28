@@ -1,3 +1,7 @@
+small piece of code to locate unique anagrams of a given word in a text file
+
+you can run the example by ./run.sh
+(you may need chmod +x run.sh)
 
 
 It's the job of any decent developer to ask questions before jumping in to code. There are a number
@@ -20,5 +24,4 @@ I've gone ahead and created this program assuming:
 4.) No
 5.) All inpurts are valid words
 6.) Command line arguments, print resutls to stdout
-
 
