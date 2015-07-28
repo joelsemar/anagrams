@@ -22,6 +22,6 @@ I've gone ahead and created this program assuming:
 2.) wikipedia definition, however the inputs will restrict candidate return values
 3.) Yes
 4.) No
-5.) All inpurts are valid words
+5.) All inputs are valid words
 6.) Command line arguments, print resutls to stdout
 
