@@ -26,7 +26,8 @@ def is_anagram(source, candidate):
     Tests if two given words are anagrams of one another
     """
 
-    # by definition, a number cannot be an anagram to a string
+    # make sure we are comparing two strings here
+    # TODO: find out of 'silent' is an anagram of ['l','i','s','t','e','n']
     if not isinstance(candidate, str):
         return False
 
@@ -39,6 +40,7 @@ def is_anagram(source, candidate):
     if len(source) != len(candidate):
         return False
 
+    # assuming a word cannot be an anagram of itself
     if source == candidate:
         return False
 
