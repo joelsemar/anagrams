@@ -2,6 +2,7 @@ import random
 from anagram import is_anagram
 import unittest
 
+
 class AnagramTest(unittest.TestCase):
 
     def test_is_anagram(self):
@@ -15,13 +16,13 @@ class AnagramTest(unittest.TestCase):
 
 
     def test_random_shuffle(self):
-        # a hundred random strings
-        base_words = [random_string(12) for _ in range(100)]
+        base_words = [random_string(12) for _ in range(1000)]
 
         for word in base_words:
             anagram = create_anagram(word)
             self.assertTrue(is_anagram(word, anagram))
             self.assertFalse(is_anagram(word, random_string(12)))
+
 
 def random_string(size):
     alpha =  "abcdefghijklmnopqrstuvwxyz"
@@ -48,10 +49,6 @@ def create_anagram(text):
         anagram.insert(index, random.choice(punctuation))
 
     return "".join(anagram)
-
-
-
-
 
 
 if __name__ == "__main__":
