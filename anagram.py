@@ -36,7 +36,8 @@ def fast_find_anagrams(word_input, file_input):
     sorted_word_input = sorted(clean(word_input))
 
     for word in file_input.readlines():
-        if sorted(clean(word)) == sorted_word_input:
+        word = clean(word)
+        if word != word_input and sorted(word) == sorted_word_input:
             found.append(word.strip())
 
     found = set(found)
