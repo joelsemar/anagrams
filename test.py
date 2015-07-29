@@ -14,6 +14,16 @@ class AnagramTest(unittest.TestCase):
         self.assertTrue(is_anagram("Nessiteras rhombopteryx", "Monster hoax by Sir Peter S"))
         self.assertTrue(is_anagram("RocKetBoys", "oct o ber sky"))
 
+    def test_whitespace(self):
+        self.assertTrue(is_anagram("rob", "o r b"))
+        # make sure spaces don't fool us into thinking a word can be an anagram of itself
+        self.assertFalse(is_anagram("rob", "r o b"))
+
+    def test_punctuation(self):
+        self.assertTrue(is_anagram("silent", "listen!"))
+        # make sure punctuation doesn't fool us into thinking a word can be an anagram of itself
+        self.assertFalse(is_anagram("silent", "s.i.l.e.n.t"))
+
 
     def test_random_shuffle(self):
         base_words = [random_string(12) for _ in range(1000)]
