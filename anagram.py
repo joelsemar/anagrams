@@ -1,6 +1,7 @@
 import re
 import sys
 import time
+from functools import wraps
 
 def find_anagrams(word_input, file_input):
     """
@@ -17,8 +18,9 @@ def find_anagrams(word_input, file_input):
 
     found = set(found)
     time_taken = time.time() - start
-    print "found %s words in %s seconds" % (len(found), time_taken)
+    print "found %s anagrams in %s seconds" % (len(found), time_taken)
     print ", ".join(found)
+    return found
 
 
 def is_anagram(source, candidate):
@@ -34,8 +36,8 @@ def is_anagram(source, candidate):
     if not isinstance(source, str):
         return False
 
-    source = clean(source)
     candidate = clean(candidate)
+    source = clean(source)
 
     if len(source) != len(candidate):
         return False
@@ -44,8 +46,7 @@ def is_anagram(source, candidate):
     if source == candidate:
         return False
 
-    if sorted(source) == sorted(candidate):
-        return True
+    return sorted(source) == sorted(candidate)
 
 
 def clean(text):
@@ -54,6 +55,7 @@ def clean(text):
     """
     text = text.lower()
     return re.sub("[^a-z]", "", text)
+
 
 
 if __name__ == "__main__":
